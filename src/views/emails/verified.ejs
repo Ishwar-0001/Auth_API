@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Account Verified</title>
+    <style>
+        body { background-color: #f3f4f6; font-family: 'Helvetica', 'Arial', sans-serif; margin: 0; padding: 0; }
+        .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
+        .card { background-color: #ffffff; padding: 40px 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        .success-icon { 
+            background-color: #d1fae5; 
+            color: #059669; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            line-height: 60px; 
+            font-size: 30px; 
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+        .btn {
+            background-color: #4F46E5;
+            color: #ffffff;
+            padding: 14px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        .footer { color: #6B7280; font-size: 12px; margin-top: 20px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 style="color: #4F46E5; text-align: center; margin-bottom: 20px; font-weight: 800;">TexorLab.</h2>
+        
+        <div class="card">
+            <div class="success-icon">✓</div>
+
+            <h1 style="color: #111827; font-size: 24px; margin-top: 0;">Account Verified!</h1>
+            
+            <p style="color: #4B5563; font-size: 16px; line-height: 1.6;">
+                Hello <strong><%= name %></strong>,<br>
+                Your account has been successfully verified. You now have full access to all features.
+            </p>
+
+            <a href="<%= dashboard_url %>" class="btn">Go to Dashboard</a>
+        </div>
+        
+        <div class="footer">
+            &copy; TexorLab Inc.
+        </div>
+    </div>
+</body>
+</html>
