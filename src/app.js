@@ -12,7 +12,7 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:5173', // frontend
+  origin: 'https://frontend-weld-seven-a0rj6yqpp0.vercel.app', // frontend
   credentials: true
 }));
 app.use(morgan('dev'));
