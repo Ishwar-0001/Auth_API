@@ -1,0 +1,48 @@
+{
+  "name": "api-authentication",
+  "version": "1.0.0",
+  "description": "Secure authentication API with email, password, OTP and auto-username",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node src/server.js",
+    "dev": "cross-env NODE_ENV=development nodemon src/server.js",
+    "dev:watch": "nodemon --watch src --ext js,json src/server.js",
+    "debug": "cross-env NODE_ENV=development nodemon --inspect src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhisheksingh01-ai/API-Authentication.git"
+  },
+  "author": "Abhishek Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abhisheksingh01-ai/API-Authentication/issues"
+  },
+  "homepage": "https://github.com/abhisheksingh01-ai/API-Authentication#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "helmet": "^7.1.0",
+    "joi": "^18.0.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.7.0",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.15",
+    "otp-generator": "^4.0.1",
+    "rate-limiter-flexible": "^4.0.1",
+    "serverless-http": "^4.0.0",
+    "validator": "^13.15.26"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
