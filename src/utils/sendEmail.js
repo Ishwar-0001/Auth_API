@@ -20,7 +20,7 @@ const sendEmail = async (to, subject, templateName, data) => {
 
     // 3. Send the email
     await transporter.sendMail({
-      from: `"TexorLab Team" <${process.env.EMAIL_USER}>`, // Updated Branding
+      from: `"Satta King Team" <${process.env.EMAIL_USER}>`, // Updated Branding
       to,
       subject,
       html // We send 'html', not 'text'
