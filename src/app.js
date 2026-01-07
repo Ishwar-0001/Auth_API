@@ -8,37 +8,31 @@ const gameResultRoutes = require('./routes/gameResult.routes');
 
 const app = express();
 
-// ===== MIDDLEWARE =====
-app.use(express.json());
-app.use(helmet());
+// ✅ CORS FIRST
 app.use(cors({
   origin: [
-      "http://localhost:5173",            
-      "https://frontend-zeta-gold-83.vercel.app"  
-    ], 
-  credentials: true
+    "http://localhost:5173",
+    "https://frontend-zeta-gold-83.vercel.app"
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+app.options('*', cors());
+
+// middleware
+app.use(express.json());
+app.use(helmet());
 app.use(morgan('dev'));
 
-// ===== ROUTES =====
-app.use('/api/auth', authRoutes);               // login/register
-app.use('/api/game', gameResultRoutes); // game results
+// routes
+app.use('/api/auth', authRoutes);
+app.use('/api/game', gameResultRoutes);
 
-// ===== HEALTH CHECK =====
+// health
 app.get('/', (req, res) => {
   res.json({ message: 'API is running!' });
-});
-
-// ===== ERROR HANDLING =====
-app.use((req, res) => {
-  res.status(404).json({ error: 'Route not found' });
-});
-
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(err.status || 500).json({
-    error: err.message || 'Server Error',
-  });
 });
 
 module.exports = app;
