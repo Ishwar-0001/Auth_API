@@ -12,7 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 app.use(cors({
-  origin: 'http://localhost:5173', 
+  origin: [
+      "http://localhost:5173",            
+      "https://frontend-zeta-gold-83.vercel.app/"  
+    ], 
   credentials: true
 }));
 app.use(morgan('dev'));
